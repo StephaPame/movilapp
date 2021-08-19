@@ -1,8 +1,8 @@
 export interface UsuarioMovil {
-    id: string;
+    uid: string;
     fechaCreacion: any; 
     nombre: string;
     foto: string;
     email: string;
-    passwor: string;
+    password: string;
 }

@@ -5,15 +5,22 @@
         <ion-card>
           <ion-item>
             <ion-label position="floating">Email:</ion-label>
-            <ion-input type="email"></ion-input>
+            <ion-input [(ngModel)] = "email"></ion-input>
           </ion-item>
         </ion-card>
         <ion-card>
           <ion-item>
             <ion-label position="floating">Password:</ion-label>
-            <ion-input type="text" minlength="6" required="true"></ion-input>
+            <ion-input type="text" minlength="6" required="true" [(ngModel)] = "user1.password"></ion-input>
           </ion-item>
         </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button (click)="registrar()" expand="block" fill="clear" shape="round">
+          register
+        </ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>
