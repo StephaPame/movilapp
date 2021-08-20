@@ -12,12 +12,14 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { PagesModule } from './pages/pages.module';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule, 
             IonicModule.forRoot(), 
+            PagesModule,
             AppRoutingModule,
             AngularFireModule.initializeApp(environment.firebaseConfig),
             AngularFireAuthModule,

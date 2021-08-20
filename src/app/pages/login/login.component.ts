@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioMovil } from 'src/app/modelDB';
-import { AutenticacionService } from 'src/app/sevicios/autenticacion.service';
+import { FirebaseautenticacionService } from 'src/app/services/firebaseautenticacion.service';
+
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,7 @@ import { AutenticacionService } from 'src/app/sevicios/autenticacion.service';
 })
 export class LoginComponent implements OnInit {
 
-  user1: UsuarioMovil = {
+  usuario: UsuarioMovil = {
     uid: '',
     fechaCreacion: new Date,
     nombre: '',
@@ -18,13 +19,20 @@ export class LoginComponent implements OnInit {
     password: '',
   }
   email = '';
-  constructor(public authS: AutenticacionService) { }
+  //hace el llamdo a la al servicio de autenticación 
+  constructor(public firebaseautenticacionService: FirebaseautenticacionService) { }
 
   ngOnInit() {}
 
-  registrar(){
+  async registrar(){
     console.log('registrar()');
-    console.log(this.email);
-    // this.authS.signup(this.user1.email, this.user1.password);
+    console.log(this.usuario.password);
+    const email= this.usuario.email;
+    const password = this.usuario.password;
+    await this.firebaseautenticacionService.registrar(email, password).catch( error => {
+      console.log('error al registrar -->', error);
+
+      // error.
+    }) ;
   }
 }

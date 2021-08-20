@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <!-- <ion-buttons slot="start">
+      <ion-button (click)="modalController.dismiss()">
+        <ion-icon name="arrow-back" color="dark"></ion-icon>
+      </ion-button>
+    </ion-buttons> -->
+    <ion-buttons slot="start">
+      <ion-button  routerLink="/login">
+        <ion-icon name="arrow-back" color="dark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="normal ion-text-wrap" style="text-align: center;">
+      Registro
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col >
+        <ion-card>
+          <ion-item>
+            <ion-label position="floating">Email:</ion-label>
+            <ion-input type="email" required="true"></ion-input>
+          </ion-item>
+        </ion-card>
+        <ion-card>
+          <ion-item>
+            <ion-label position="floating">Password:</ion-label>
+            <ion-input type="password" minlength="6" required="true" ></ion-input>
+          </ion-item>
+        </ion-card>
+        <ion-card>
+          <ion-item>
+            <ion-label position="floating">Nombre:</ion-label>
+            <ion-input type="text" maxlength="20" required="true" ></ion-input>
+          </ion-item>
+        </ion-card>
+        <ion-card>
+          <ion-item>
+            <ion-label position="floating">Foto:</ion-label>
+            <ion-icon slot="end" name="camera"></ion-icon>
+            <ion-input type="text" minlength="6" required="true" ></ion-input>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="block" shape="round">
+          Registrarme
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
