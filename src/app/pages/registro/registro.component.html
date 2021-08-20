@@ -45,10 +45,19 @@
           </ion-item>
         </ion-card>
         <ion-card>
-          <ion-item>
+          <ion-item *ngIf="!ingresarEnable">
             <ion-label position="floating">Foto:</ion-label>
-            <ion-icon slot="end" name="camera"></ion-icon>
-            <ion-input type="text" minlength="6" required="true" [(ngModel)]="usuario.foto"></ion-input>
+            <ion-buttons slot="end">
+              <ion-button>
+                <label for="file-upload">
+                  <ion-icon slot="end" name="camera"></ion-icon>
+                </label>
+              </ion-button>
+            </ion-buttons>
+            <input (change)="newImageUpload($event)" id="file-upload" style="display: none;" type="file" accept="image/*">
+          </ion-item>
+          <ion-item *ngIf="!ingresarEnable">
+            <img class="image" [src]="usuario.foto">
           </ion-item>
         </ion-card>
       </ion-col>

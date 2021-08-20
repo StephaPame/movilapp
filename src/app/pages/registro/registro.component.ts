@@ -20,11 +20,25 @@ export class RegistroComponent implements OnInit {
     password: '',
   }
   
-  
+  ingresarEnable = false;
+  newFile : any;
   constructor(public firebaseautenticacionService: FirebaseautenticacionService,
               public firestoreService:FirestoreService,) { }
 
   ngOnInit() {}
+
+  async newImageUpload(event: any ){
+    console.log(event);
+    if(event.target.files && event.target.files[0]){
+      this.newFile = event.target.files[0];
+      const reader = new FileReader();
+      reader.onload = ((image) =>{
+        this.usuario.foto = image.target.result as string;
+      });
+      reader.readAsDataURL(event.target.files[0]);
+    }
+    console.log('Fin de carga de imagen ');
+  }
 
   async registrar(){
     console.log('registrar()');
