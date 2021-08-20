@@ -24,5 +24,11 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {}
 
-  
+  inicioGoogle(){
+    console.log('inicioGoogle');
+  }
+
+  inicioFacebook(){
+    console.log('inicioFacebook');
+  }
 }

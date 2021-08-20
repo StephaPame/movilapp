@@ -36,5 +36,15 @@
         <ion-label>No tengo cuenta <a routerLink="/registro">Registrarme</a> </ion-label>
       </ion-col>
     </ion-row>
+
+    <ion-row style="align-items: center;">
+      <ion-col (click)="inicioGoogle()">
+        <img style="height: 100px; width: 100px; align-items: center;" src="../../../assets/img/google.png">
+      </ion-col>
+      <ion-col (click)="inicioFacebook()">
+        <img style="height: 55px; width: 55px; align-items: center;" src="../../../assets/img/facebook.png">
+      </ion-col>
+    </ion-row>
   </ion-grid>
+  
 </ion-content>
