@@ -23,33 +23,39 @@
         <ion-card>
           <ion-item>
             <ion-label position="floating">Email:</ion-label>
-            <ion-input type="email" required="true"></ion-input>
+            <ion-input type="email" name="email" [(ngModel)]="usuario.email" required="true"></ion-input>
           </ion-item>
         </ion-card>
         <ion-card>
           <ion-item>
             <ion-label position="floating">Password:</ion-label>
-            <ion-input type="password" minlength="6" required="true" ></ion-input>
+            <ion-input type="password" minlength="6" name="password" [(ngModel)]="usuario.password" required="true" ></ion-input>
           </ion-item>
         </ion-card>
         <ion-card>
           <ion-item>
             <ion-label position="floating">Nombre:</ion-label>
-            <ion-input type="text" maxlength="20" required="true" ></ion-input>
+            <ion-input type="text" maxlength="20" name="nombre" [(ngModel)]="usuario.nombre" required="true" ></ion-input>
+          </ion-item>
+        </ion-card>
+        <ion-card>
+          <ion-item>
+            <ion-label position="floating">Apellido:</ion-label>
+            <ion-input type="text" maxlength="20" name="apellido" [(ngModel)]="usuario.apellido" required="true" ></ion-input>
           </ion-item>
         </ion-card>
         <ion-card>
           <ion-item>
             <ion-label position="floating">Foto:</ion-label>
             <ion-icon slot="end" name="camera"></ion-icon>
-            <ion-input type="text" minlength="6" required="true" ></ion-input>
+            <ion-input type="text" minlength="6" required="true" [(ngModel)]="usuario.foto"></ion-input>
           </ion-item>
         </ion-card>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
-        <ion-button expand="block" shape="round">
+        <ion-button expand="block" (click)="registrar()" shape="round">
           Registrarme
         </ion-button>
       </ion-col>

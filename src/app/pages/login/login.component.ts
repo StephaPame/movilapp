@@ -14,25 +14,15 @@ export class LoginComponent implements OnInit {
     uid: '',
     fechaCreacion: new Date,
     nombre: '',
+    apellido: '',
     foto: '',
     email: '',
     password: '',
   }
-  email = '';
   //hace el llamdo a la al servicio de autenticación 
   constructor(public firebaseautenticacionService: FirebaseautenticacionService) { }
 
   ngOnInit() {}
 
-  async registrar(){
-    console.log('registrar()');
-    console.log(this.usuario.password);
-    const email= this.usuario.email;
-    const password = this.usuario.password;
-    await this.firebaseautenticacionService.registrar(email, password).catch( error => {
-      console.log('error al registrar -->', error);
-
-      // error.
-    }) ;
-  }
+  
 }

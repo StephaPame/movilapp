@@ -17,7 +17,7 @@ export class FirebaseautenticacionService {
   
     stateUser(){
       this.stateAuth().subscribe( res => {
-        console.log(res);
+        console.log('stateUser()',res);
         if (res !== null){
           //this.getInfoUser();
         }

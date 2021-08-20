@@ -13,20 +13,20 @@
         <ion-card>
           <ion-item>
             <ion-label position="floating">Email:</ion-label>
-            <ion-input type="email" [(ngModel)]="usuario.email" required="true"></ion-input>
+            <ion-input type="email" [(ngModel)]="usuario.email" name="email" required="true"></ion-input>
           </ion-item>
         </ion-card>
         <ion-card>
           <ion-item>
             <ion-label position="floating">Password:</ion-label>
-            <ion-input type="password" minlength="6" required="true" [(ngModel)]="usuario.password"></ion-input>
+            <ion-input type="password" minlength="6" name="password" required="true" [(ngModel)]="usuario.password"></ion-input>
           </ion-item>
         </ion-card>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
-        <ion-button (click)="registrar()" expand="block" shape="round">
+        <ion-button expand="block" shape="round">
           Login
         </ion-button>
       </ion-col>
