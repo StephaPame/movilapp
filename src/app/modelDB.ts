@@ -8,11 +8,11 @@ export interface UsuarioMovil {
     password: string;
 }
 
-export interface Electrolinera{
+export interface ElectrolineraBD {
     direccion: string;
     domingo: string;
     estado: string;
-    formaspago: string
+    formaspago: string;
     jueves: string;
     latitud: number;
     longitud: number;

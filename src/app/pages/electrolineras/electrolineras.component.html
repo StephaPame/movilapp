@@ -6,5 +6,8 @@
 </ion-header>
 
 <ion-content>
-  
+  <ion-item *ngFor="let electrolinera of electrolineraArray" >
+    <ion-icon slot="start" name="battery-half-outline"></ion-icon>
+    <ion-label>{{electrolinera.name}}</ion-label>
+  </ion-item>
 </ion-content>
