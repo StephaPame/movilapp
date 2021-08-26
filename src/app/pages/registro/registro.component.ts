@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioMovil } from 'src/app/modelDB';
 import { FirebaseautenticacionService } from 'src/app/services/firebaseautenticacion.service';
+import { FirestorageService } from 'src/app/services/firestorage.service';
 import { FirestoreService } from 'src/app/services/firestore.service';
 
 @Component({
@@ -23,7 +24,8 @@ export class RegistroComponent implements OnInit {
   ingresarEnable = false;
   newFile : any;
   constructor(public firebaseautenticacionService: FirebaseautenticacionService,
-              public firestoreService:FirestoreService,) { }
+              public firestoreService:FirestoreService,
+              public firestorageService: FirestorageService,) { }
 
   ngOnInit() {}
 
@@ -47,6 +49,8 @@ export class RegistroComponent implements OnInit {
     const password = this.usuario.password;
     await this.firebaseautenticacionService.registrar(email, password).then(res => {
       console.log('Registro exitoso!');
+      const path = '/UsuarioMobil';
+      const fotoRes = this.firestorageService.uploadImagen(this.newFile, path , this.usuario.nombre);
       this.registrarEnBD();
     }).catch( error => {
       console.log('error al registrar -->', error);

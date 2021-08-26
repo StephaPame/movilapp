@@ -14,6 +14,10 @@ import { environment } from 'src/environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { PagesModule } from './pages/pages.module';
 
+//Modulo fireStorage para archivos 
+import { AngularFireStorageModule } from '@angular/fire/storage';
+
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -23,7 +27,8 @@ import { PagesModule } from './pages/pages.module';
             AppRoutingModule,
             AngularFireModule.initializeApp(environment.firebaseConfig),
             AngularFireAuthModule,
-            AngularFirestoreModule,],
+            AngularFirestoreModule,
+            AngularFireStorageModule,],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })

@@ -6,6 +6,10 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from '../app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { RegistroComponent } from './registro/registro.component';
+import { HomeComponent } from './home/home.component';
+import { ElectrolinerasComponent } from './electrolineras/electrolineras.component';
+import { QuejasSComponent } from './quejas-s/quejas-s.component';
+import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
 
 
 
@@ -13,6 +17,10 @@ import { RegistroComponent } from './registro/registro.component';
   declarations: [
     LoginComponent,
     RegistroComponent,
+    HomeComponent,
+    ElectrolinerasComponent,
+    QuejasSComponent,
+    PerfilUsuarioComponent
   ],
   imports: [
     CommonModule,

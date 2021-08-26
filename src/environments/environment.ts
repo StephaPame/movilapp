@@ -5,21 +5,21 @@
 export const environment = {
   production: false,
   firebaseConfig :{
-    // apiKey: "AIzaSyAMjx5eBVGo6ZVYzHGDJfMWVeytPuu_ZxI",
-    // authDomain: "integracion-maps-304321.firebaseapp.com",
-    // databaseURL: "https://integracion-maps-304321-default-rtdb.firebaseio.com",
-    // projectId: "integracion-maps-304321",
-    // storageBucket: "integracion-maps-304321.appspot.com",
-    // messagingSenderId: "1010634512130",
-    // appId: "1:1010634512130:web:b4e5cb5da67a8116ea541b"
+    apiKey: "AIzaSyAMjx5eBVGo6ZVYzHGDJfMWVeytPuu_ZxI",
+    authDomain: "integracion-maps-304321.firebaseapp.com",
+    databaseURL: "https://integracion-maps-304321-default-rtdb.firebaseio.com",
+    projectId: "integracion-maps-304321",
+    storageBucket: "integracion-maps-304321.appspot.com",
+    messagingSenderId: "1010634512130",
+    appId: "1:1010634512130:web:b4e5cb5da67a8116ea541b"
 
-    apiKey: "AIzaSyAYtS3xLtRIc3w1iHCVcbz_8U0cgndAYhM",
-    authDomain: "chat-ionic-firebase-7ad5f.firebaseapp.com",
-    projectId: "chat-ionic-firebase-7ad5f",
-    storageBucket: "chat-ionic-firebase-7ad5f.appspot.com",
-    messagingSenderId: "852825121078",
-    appId: "1:852825121078:web:5c54e54877e2e514589397",
-    measurementId: "G-KT16QJCT2H"
+    // apiKey: "AIzaSyAYtS3xLtRIc3w1iHCVcbz_8U0cgndAYhM",
+    // authDomain: "chat-ionic-firebase-7ad5f.firebaseapp.com",
+    // projectId: "chat-ionic-firebase-7ad5f",
+    // storageBucket: "chat-ionic-firebase-7ad5f.appspot.com",
+    // messagingSenderId: "852825121078",
+    // appId: "1:852825121078:web:5c54e54877e2e514589397",
+    // measurementId: "G-KT16QJCT2H"
   }
 };
 

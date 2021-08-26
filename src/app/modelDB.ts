@@ -7,3 +7,22 @@ export interface UsuarioMovil {
     email: string;
     password: string;
 }
+
+export interface Electrolinera{
+    direccion: string;
+    domingo: string;
+    estado: string;
+    formaspago: string
+    jueves: string;
+    latitud: number;
+    longitud: number;
+    lunes: string;
+    martes: string;
+    miercoles: string;
+    name: string;
+    numeroconectores: string;
+    referencia: string;
+    sabado: string;
+    tipoconector: string;
+    viernes: string;
+}
