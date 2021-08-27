@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { LoadingController, ToastController } from '@ionic/angular';
 import { UsuarioMovil } from 'src/app/modelDB';
 import { FirebaseautenticacionService } from 'src/app/services/firebaseautenticacion.service';
 import { FirestorageService } from 'src/app/services/firestorage.service';
@@ -23,9 +25,13 @@ export class RegistroComponent implements OnInit {
   
   ingresarEnable = false;
   newFile : any;
+  loading: any;
   constructor(public firebaseautenticacionService: FirebaseautenticacionService,
               public firestoreService:FirestoreService,
-              public firestorageService: FirestorageService,) { }
+              public firestorageService: FirestorageService,
+              public loadingController: LoadingController,
+              public toastController: ToastController,
+              private router: Router,) { }
 
   ngOnInit() {}
 
@@ -74,20 +80,36 @@ export class RegistroComponent implements OnInit {
   }
 
   async guardarUser() {
-    
+    this.presentLoading();
     const path = '/UsuarioMobil';
     const name = this.usuario.nombre;
     console.log('nombre: ', this.usuario.nombre);
     console.log('guardarUser()  ==>> this.cliente.nombre');
-    // if(this.newFile !== undefined){//si esque el usuario no quiere subir ninguna foto omite este paso
-    //   const res = await this.firestorageService.subirImagen(this.newFile, path, name);
-    //   this.cliente.foto = res;
-    // }  
     console.log('el nombre del cliente que se quiere guardar es: ',this.usuario);
     await this.firestoreService.createDoc(this.usuario, path, this.usuario.uid).then(res => {
+      this.loading.dismiss();
       console.log('CLIENTE Guardado con exitos!!!');
+      // this.router.navigate(['/menu'], { replaceUrl: true });
+      this.presentToast('Registro Exitoso', 2000);
     }).catch(error => {
       console.log('No se pudo guardar el a ocurrido un error ->', error);
+      this.presentToast('Un error ha ocurrido durante el registro', 2000);
     });
+  }
+
+  async presentLoading() {
+    this.loading = await this.loadingController.create({
+      cssClass: 'my-custom-class',
+      message: 'Registrando...',
+    });
+    await this.loading.present();
+  }
+
+  async presentToast(mensaje: string, tiempo: number) {
+    const toast = await this.toastController.create({
+      message: mensaje,
+      duration: tiempo 
+    });
+    toast.present();
   }
 }

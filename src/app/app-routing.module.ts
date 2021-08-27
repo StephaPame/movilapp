@@ -7,35 +7,46 @@ import { PerfilUsuarioComponent } from './pages/perfil-usuario/perfil-usuario.co
 import { QuejasSComponent } from './pages/quejas-s/quejas-s.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 
+//Usuario Logueado INCIO
+import { canActivate, redirectUnauthorizedTo, redirectLoggedInTo } from '@angular/fire/auth-guard';
+// import { ProgresoDuenioComponent } from './pages/progreso-duenio/progreso-duenio.component';
+// import { ProcesosDwComponent } from './pages/procesos-dw/procesos-dw.component';
+// import { ValoracionDwComponent } from './pages/valoracion-dw/valoracion-dw.component';
+const isLogged = () => redirectLoggedInTo(['/menu']);
+
+const redirectUnauthorizedToLogin = () =>
+  redirectUnauthorizedTo(['/']);
+//Usuario Logueado FIN
+
 const routes: Routes = [
   {
     path: 'menu',
-    component: HomeComponent
+    component: HomeComponent, ...canActivate(redirectUnauthorizedToLogin),
   },
   {
     path: 'perfil-usuario',
-    component: PerfilUsuarioComponent
+    component: PerfilUsuarioComponent, ...canActivate(redirectUnauthorizedToLogin),
   },
   {
     path: 'quejas',
-    component: QuejasSComponent
+    component: QuejasSComponent, ...canActivate(redirectUnauthorizedToLogin),
   },
   {
     path: 'electrolineras',
-    component: ElectrolinerasComponent
+    component: ElectrolinerasComponent, ...canActivate(redirectUnauthorizedToLogin),
   },
   {
     path: 'registro',
-    component: RegistroComponent
+    component: RegistroComponent, ...canActivate(isLogged),
   },
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent, ...canActivate(isLogged),
   },
   {
     //si no se escribe nada en la ruta 
     path: '', 
-    component: LoginComponent, 
+    component: LoginComponent, ...canActivate(isLogged),
   },
   {
     //ruta por defecto "si escriben cualquier cosa"
